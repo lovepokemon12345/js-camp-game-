@@ -1,4 +1,4 @@
-var canvas=document.getElementByld("myCanvas")
+var canvas=document.getElementByld("myCanvas");
 var ctx=canvas.getContext("2d");
 var ballradius=10;
 var x=canvas.width/2;
@@ -69,7 +69,7 @@ function collisionDetection(){
                     score++;
                     if(score==brickRowCount*brickColumnCount){
                         alert("YOUWIN,CONGRATS!");
-                        document.location.reload();
+                    }   document.location.reload();
                 }
             }
         }
@@ -93,5 +93,32 @@ function drawpaddle(){
 function drawBricks(){
     for(varc=0;c<brickColumnCount;c++){
         for
+    }
+}
+
+// Freedom Thompson
+if(x + dx > canvas.width-ballRadius || x + dx < ballRadius){
+    dx = -dx;
+}
+if(y + dy < ballRadius){
+    dy = -dy;
+}
+else if(y + dy > canvas.height-ballRadius){
+    if(x > paddleX && x < paddleX + paddleWidth){
+        dy = -dy;
+    }
+    else {
+        lives--;
+        if (!life){
+            alert("GAME OVER");
+            document.location.reload();
+        }
+        else{
+            x = canvas.width/2;
+            y = canvas.height-30;
+            dx = 2;
+            dy = -2;
+            paddleX = (canvas.width-paddleWidth)/2;
+        }
     }
 }
