@@ -96,6 +96,7 @@ function drawBricks(){
     }
 }
 
+
 // Freedom Thompson
 if(x + dx > canvas.width-ballRadius || x + dx < ballRadius){
     dx = -dx;
@@ -122,3 +123,4 @@ else if(y + dy > canvas.height-ballRadius){
         }
     }
 }
+
