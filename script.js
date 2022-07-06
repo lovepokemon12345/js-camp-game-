@@ -90,11 +90,25 @@ function drawpaddle(){
     ctx.fill();
     ctx.closepath();
 }
+//William Moore
 function drawBricks(){
-    for(varc=0;c<brickColumnCount;c++){
-        for
+   for(varc=0;c<brickColumnCount;c++){
+      for(var r=0;r<brickRowCount;r++){
+        if(bricks[c][r].status==1){
+            var brickX=(r*(brickWidth+brickPadding))+brickOffsetLeft;
+            var brickY=(c*(brickHeight+brickPadding))+brickOffseTop;
+            bricks[c][r].x=brickX;
+            bricks[c][r].y=brickY;
+            ctx.beginPath();
+            ctx.rect(brickX,brickY,brickWidth,brickHight);
+            ctx.fillStyle="#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
     }
 }
+
+
 
 
 // Malik 
@@ -148,5 +162,6 @@ else if(y + dy > canvas.height-ballRadius){
             paddleX = (canvas.width-paddleWidth)/2;
         }
     }
+
 }
 
