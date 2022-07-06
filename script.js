@@ -97,6 +97,30 @@ function drawBricks(){
 }
 
 
+// Christopher Moore
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillstyle = "0095DD";
+    ctx.filltext("Score:"+score, 8,20);
+}
+function drawLives() {
+    ctx.font = "16px Arial";
+    ctx.fillstyle = "0095DD";
+    ctx.filltext("Lives:"+lives,canvas.width-65,20) 
+}
+
+
+function draw() {
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    drawBricks();
+    drawBall();
+    drawpaddle();
+    drawScore();
+    drawLives();
+    collisionDetection();
+}
+
+
 // Freedom Thompson
 if(x + dx > canvas.width-ballRadius || x + dx < ballRadius){
     dx = -dx;
@@ -123,4 +147,5 @@ else if(y + dy > canvas.height-ballRadius){
         }
     }
 }
+
 
