@@ -95,3 +95,5 @@ function drawBricks(){
         for
     }
 }
+
+// Nicole Koch
