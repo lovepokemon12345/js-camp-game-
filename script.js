@@ -97,6 +97,8 @@ function drawBricks(){
 }
 
 
+// Malik 
+
 // Christopher Moore
 function drawScore() {
     ctx.font = "16px Arial";
@@ -147,5 +149,4 @@ else if(y + dy > canvas.height-ballRadius){
         }
     }
 }
-
 
